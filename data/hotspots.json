@@ -1,0 +1,36 @@
+{
+  "hotspots": [
+    { "id": "hs_river_01", "x": 260, "y": 1230, "cast_radius": 42, "cap": 2, "zone_id": "river_main", "kind": "river" },
+    { "id": "hs_river_02", "x": 460, "y": 1285, "cast_radius": 40, "cap": 2, "zone_id": "river_main", "kind": "river" },
+    { "id": "hs_river_03", "x": 690, "y": 1215, "cast_radius": 38, "cap": 2, "zone_id": "river_main", "kind": "river" },
+    { "id": "hs_river_04", "x": 910, "y": 1310, "cast_radius": 36, "cap": 2, "zone_id": "river_main", "kind": "river" },
+    { "id": "hs_river_05", "x": 1160, "y": 1250, "cast_radius": 40, "cap": 2, "zone_id": "river_main", "kind": "river" },
+    {
+      "id": "hs_inland_edge_01",
+      "x": 300,
+      "y": 1132,
+      "cast_radius": 30,
+      "cap": 2,
+      "zone_id": "inland_main",
+      "kind": "inland_edge"
+    },
+    {
+      "id": "hs_inland_edge_02",
+      "x": 700,
+      "y": 1128,
+      "cast_radius": 30,
+      "cap": 2,
+      "zone_id": "inland_main",
+      "kind": "inland_edge"
+    },
+    {
+      "id": "hs_inland_edge_03",
+      "x": 1090,
+      "y": 1140,
+      "cast_radius": 32,
+      "cap": 2,
+      "zone_id": "inland_main",
+      "kind": "inland_edge"
+    }
+  ]
+}

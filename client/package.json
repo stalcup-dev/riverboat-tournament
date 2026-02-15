@@ -1,0 +1,21 @@
+{
+  "name": "riverboat-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test --import tsx ./src/**/*.test.ts"
+  },
+  "dependencies": {
+    "colyseus.js": "^0.16.13",
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "fish": [
+    {
+      "fish_id": "bluegill",
+      "name": "Bluegill",
+      "base_points": 8,
+      "weight_min": 0.2,
+      "weight_max": 1.1,
+      "length_min": 12,
+      "length_max": 30,
+      "rarity_tier": 1
+    },
+    {
+      "fish_id": "crappie",
+      "name": "Crappie",
+      "base_points": 10,
+      "weight_min": 0.3,
+      "weight_max": 1.8,
+      "length_min": 14,
+      "length_max": 38,
+      "rarity_tier": 1
+    },
+    {
+      "fish_id": "river_trout",
+      "name": "River Trout",
+      "base_points": 12,
+      "weight_min": 0.4,
+      "weight_max": 3.2,
+      "length_min": 22,
+      "length_max": 62,
+      "rarity_tier": 2
+    },
+    {
+      "fish_id": "river_perch",
+      "name": "River Perch",
+      "base_points": 11,
+      "weight_min": 0.3,
+      "weight_max": 2.4,
+      "length_min": 18,
+      "length_max": 45,
+      "rarity_tier": 2
+    },
+    {
+      "fish_id": "smallmouth_bass",
+      "name": "Smallmouth Bass",
+      "base_points": 15,
+      "weight_min": 0.8,
+      "weight_max": 4.8,
+      "length_min": 25,
+      "length_max": 68,
+      "rarity_tier": 2
+    },
+    {
+      "fish_id": "largemouth_bass",
+      "name": "Largemouth Bass",
+      "base_points": 17,
+      "weight_min": 1.0,
+      "weight_max": 6.5,
+      "length_min": 30,
+      "length_max": 78,
+      "rarity_tier": 3
+    },
+    {
+      "fish_id": "channel_catfish",
+      "name": "Channel Catfish",
+      "base_points": 20,
+      "weight_min": 1.5,
+      "weight_max": 14.0,
+      "length_min": 35,
+      "length_max": 110,
+      "rarity_tier": 3
+    },
+    {
+      "fish_id": "walleye",
+      "name": "Walleye",
+      "base_points": 24,
+      "weight_min": 1.0,
+      "weight_max": 8.5,
+      "length_min": 35,
+      "length_max": 90,
+      "rarity_tier": 3
+    },
+    {
+      "fish_id": "common_carp",
+      "name": "Common Carp",
+      "base_points": 18,
+      "weight_min": 1.2,
+      "weight_max": 20.0,
+      "length_min": 35,
+      "length_max": 120,
+      "rarity_tier": 4
+    },
+    {
+      "fish_id": "northern_pike",
+      "name": "Northern Pike",
+      "base_points": 28,
+      "weight_min": 2.0,
+      "weight_max": 18.0,
+      "length_min": 50,
+      "length_max": 140,
+      "rarity_tier": 4
+    },
+    {
+      "fish_id": "river_sturgeon",
+      "name": "River Sturgeon",
+      "base_points": 45,
+      "weight_min": 6.0,
+      "weight_max": 30.0,
+      "length_min": 80,
+      "length_max": 190,
+      "rarity_tier": 5
+    },
+    {
+      "fish_id": "paddlefish",
+      "name": "Paddlefish",
+      "base_points": 50,
+      "weight_min": 5.5,
+      "weight_max": 28.0,
+      "length_min": 90,
+      "length_max": 200,
+      "rarity_tier": 5
+    }
+  ]
+}

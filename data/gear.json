@@ -1,0 +1,40 @@
+{
+  "rods": [
+    { "id": "basic_rod", "name": "Basic Rod", "bite_mult": 1.0, "rarity_mult": 1.0 },
+    { "id": "river_pro_rod", "name": "River Pro Rod", "bite_mult": 0.95, "rarity_mult": 1.12 }
+  ],
+  "lines": [
+    { "id": "light_line", "name": "Light Line", "max_weight": 6.0, "bite_mult": 1.08 },
+    { "id": "braided_line", "name": "Braided Line", "max_weight": 30.0, "bite_mult": 0.94 }
+  ],
+  "baits": [
+    {
+      "id": "worm",
+      "name": "Worm",
+      "bite_mult": 1.12,
+      "rarity_mult": 0.92,
+      "notes": "Strong for trout, panfish, and perch."
+    },
+    {
+      "id": "minnow",
+      "name": "Minnow",
+      "bite_mult": 1.0,
+      "rarity_mult": 1.05,
+      "notes": "Best for predator species like bass, pike, and walleye."
+    },
+    {
+      "id": "dough_ball",
+      "name": "Dough Ball",
+      "bite_mult": 1.07,
+      "rarity_mult": 0.9,
+      "notes": "Targets carp and bottom feeders."
+    },
+    {
+      "id": "shiny_lure",
+      "name": "Shiny Lure",
+      "bite_mult": 0.9,
+      "rarity_mult": 1.2,
+      "notes": "Lower bite volume, better rare fish odds."
+    }
+  ]
+}
