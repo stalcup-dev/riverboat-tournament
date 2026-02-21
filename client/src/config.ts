@@ -2,6 +2,17 @@ export const PROTOCOL_VERSION = "0.1.0" as const;
 export const DEFAULT_SERVER_PORT = 2567;
 
 const DEV_DEFAULT_SERVER_URL = `http://localhost:${DEFAULT_SERVER_PORT}`;
+const ENV = (import.meta as ImportMeta & { env?: Record<string, unknown> }).env ?? {};
+const INLINE_VITE_SERVER_URL = ENV.VITE_SERVER_URL;
+const INLINE_VITE_INVITE_KEY = ENV.VITE_INVITE_KEY;
+const INLINE_VITE_MATCHMAKER_SECRET = ENV.VITE_MATCHMAKER_SECRET;
+const RAW_VITE_SERVER_URL =
+  typeof INLINE_VITE_SERVER_URL === "string" ? INLINE_VITE_SERVER_URL.trim() : undefined;
+const RAW_VITE_INVITE_KEY =
+  typeof INLINE_VITE_INVITE_KEY === "string" ? INLINE_VITE_INVITE_KEY.trim() : undefined;
+const RAW_VITE_MATCHMAKER_SECRET =
+  typeof INLINE_VITE_MATCHMAKER_SECRET === "string" ? INLINE_VITE_MATCHMAKER_SECRET.trim() : undefined;
+const STRICT_VITE_DEV = ENV.DEV === true;
 
 export interface EndpointResolutionInput {
   envServerUrl?: string;
@@ -125,6 +136,7 @@ export function getDefaultServerUrlForUi(): string {
 }
 
 export function resolveCurrentWebSocketEndpoint(devOverrideUrl?: string): string {
+  console.log("[config] VITE_SERVER_URL raw =", RAW_VITE_SERVER_URL ?? "(missing)");
   return resolveWebSocketEndpoint({
     envServerUrl: readViteServerUrl(),
     isDev: readViteDevFlag(),
@@ -135,46 +147,34 @@ export function resolveCurrentWebSocketEndpoint(devOverrideUrl?: string): string
 }
 
 export function getMatchmakerInviteKey(): string | undefined {
-  const env = readViteEnv();
-  const value = env.VITE_INVITE_KEY;
-  if (typeof value !== "string" || value.trim().length === 0) {
+  if (!RAW_VITE_INVITE_KEY || RAW_VITE_INVITE_KEY.length === 0) {
     return undefined;
   }
-  return value.trim();
+  return RAW_VITE_INVITE_KEY;
 }
 
 export function getMatchmakerSecret(): string | undefined {
-  const env = readViteEnv();
-  const value = env.VITE_MATCHMAKER_SECRET;
-  if (typeof value !== "string" || value.trim().length === 0) {
+  if (!RAW_VITE_MATCHMAKER_SECRET || RAW_VITE_MATCHMAKER_SECRET.length === 0) {
     return undefined;
   }
-  return value.trim();
+  return RAW_VITE_MATCHMAKER_SECRET;
 }
 
 function readViteServerUrl(): string | undefined {
-  const env = readViteEnv();
-  const value = env.VITE_SERVER_URL;
-  return typeof value === "string" ? value : undefined;
+  if (!RAW_VITE_SERVER_URL || RAW_VITE_SERVER_URL.length === 0) {
+    return undefined;
+  }
+
+  return RAW_VITE_SERVER_URL;
 }
 
 function readViteDevFlag(): boolean {
-  const env = readViteEnv();
-  const devValue = env.DEV;
-  const isViteDev = devValue === true || devValue === "true";
   const isLocalhost = typeof window !== "undefined" && window.location.hostname === "localhost";
-  return isViteDev || isLocalhost;
+  return STRICT_VITE_DEV || isLocalhost;
 }
 
 function readStrictViteDevFlag(): boolean {
-  const env = readViteEnv();
-  const devValue = env.DEV;
-  return devValue === true || devValue === "true";
-}
-
-function readViteEnv(): Record<string, unknown> {
-  const meta = import.meta as ImportMeta & { env?: Record<string, unknown> };
-  return meta.env ?? {};
+  return STRICT_VITE_DEV;
 }
 
 function isRenderDomainUrl(rawUrl: string): boolean {
